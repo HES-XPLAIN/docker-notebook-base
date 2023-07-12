@@ -47,11 +47,10 @@ RUN groupadd --gid $USER_GID $USER && useradd --uid $USER_UID --gid $USER_GID -m
 
 WORKDIR ${HOME}
 
-COPY --from=builder $HOME/.local ./.local/
+COPY --from=builder --chown="${USER_UID}:${USER_GID}" $HOME/.local ./.local/
 
 # Upgrade pip
 RUN python3 -m pip install --no-cache-dir --upgrade pip
-RUN python3 -m pip install --user jupyterlab
 
 ENV JUPYTER_PORT=8888
 EXPOSE ${JUPYTER_PORT}
