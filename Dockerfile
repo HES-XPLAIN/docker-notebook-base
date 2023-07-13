@@ -40,11 +40,13 @@ ENV HOME /home/${USER}
 
 # Create user
 RUN groupadd --gid $USER_GID $USER && useradd --uid $USER_UID --gid $USER_GID -m $USER
-# Generally, Dev Container Features assume that the non-root user (in this case ${USER})
-# is in a group with the same name (in this case ${USER}). So we must first make that so.
-# RUN groupadd ${USER} && usermod -g ${USER} -a -G users ${USER}
 
+# Install generic GL provider and glib
+RUN apt-get update -y
+RUN apt-get install -y libgl1-mesa-glx libglib2.0-0
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Set working directory
 WORKDIR ${HOME}
 
 COPY --from=builder --chown="${USER_UID}:${USER_GID}" $HOME/.local ./.local/
