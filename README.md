@@ -1,7 +1,7 @@
 # notebooks-docker
 Docker images for XAI notebooks
 
-The base image is built upon the [bitnami](https://bitnami.com/) [pytorch image](https://hub.docker.com/r/bitnami/pytorch/) image by VMware.
+The base image is built upon the [bitnami pytorch](https://hub.docker.com/r/bitnami/pytorch/) by VMware.
 
 ## build
 
@@ -23,3 +23,11 @@ docker run -it --entrypoint /bin/bash xplain-base
 ```shell
 docker run -p 8080:8080 -p 8888:8888 -it xplain-base
 ```
+
+## tag and push image to registry
+```shell
+docker image tag xplain-base:latest registry-host:5000/hes-xplain/xplain-base:latest
+docker push registry-host:5000/hes-xplain/xplain-base:latest
+```
+
+If `registry-host:5000/` is omitted, the registry used will be Docker Hub.
