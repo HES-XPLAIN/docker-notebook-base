@@ -18,3 +18,8 @@ docker run -it xplain-base
 ```shell
 docker run -it --entrypoint /bin/bash xplain-base
 ```
+
+## run and launch jupyter 
+```shell
+docker run -p 8080:8080 -p 8888:8888 -it xplain-base
+```
