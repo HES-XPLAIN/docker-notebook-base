@@ -43,7 +43,7 @@ RUN groupadd --gid $USER_GID $USER && useradd --uid $USER_UID --gid $USER_GID -m
 
 # Install generic GL provider and glib
 RUN apt-get update -y
-RUN apt-get install -y libgl1-mesa-glx libglib2.0-0
+RUN apt-get install -y libgl1 libglib2.0-0
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
