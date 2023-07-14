@@ -15,6 +15,11 @@ Alternatively, use the GitHub CLI interactively:
 gh release create
 ```
 
+## Set visibility to public
+
+In *Package* > *Package settings* > *Danger Zone*, ensure the package visibility
+is set to **Public**.
+
 ## Done!
 
 Wait a few minutes for the image to be automatically built and published on ghcr.io.

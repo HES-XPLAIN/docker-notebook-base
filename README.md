@@ -7,7 +7,7 @@ It includes Jupyter and all dependency packages necessary to run the provided no
 
 ## Release
 
-To publish the package on the GitHub Packages registry, see [RELEASE.md].
+To publish the package on the GitHub Packages registry, see [RELEASE](RELEASE.md).
 
 ## Cheatsheet
 
