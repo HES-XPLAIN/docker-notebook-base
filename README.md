@@ -1,7 +1,9 @@
-# notebooks-docker
-Docker images for XAI notebooks
+# notebook-docker-base
+Docker base image for HES-XPLAIN notebooks.
 
-The base image is built upon the [bitnami pytorch](https://hub.docker.com/r/bitnami/pytorch/) by VMware.
+The image is built upon the [bitnami pytorch](https://hub.docker.com/r/bitnami/pytorch/) by VMware.
+
+It includes Jupyter and all dependency packages necessary to run the provided notebooks.
 
 ## Release
 
