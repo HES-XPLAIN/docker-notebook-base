@@ -19,17 +19,17 @@ docker build -t xplain-base .
 
 ### run
 ```shell
-docker run -it xplain-base
+docker run --rm -it xplain-base
 ```
 
 ### run and launch jupyter
 ```shell
-docker run -p 8080:8080 -p 8888:8888 -it xplain-base
+docker run --rm -p 8080:8080 -p 8888:8888 -it xplain-base
 ```
 
 ### run and override entry point
 ```shell
-docker run -it --entrypoint /bin/bash xplain-base
+docker run --rm -it --entrypoint /bin/bash xplain-base
 ```
 
 ### tag and push image to registry
