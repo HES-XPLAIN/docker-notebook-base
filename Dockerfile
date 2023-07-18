@@ -52,7 +52,7 @@ WORKDIR ${HOME}
 COPY --from=builder --chown="${USER_UID}:${USER_GID}" $HOME/.local ./.local/
 
 # Upgrade pip
-RUN python3 -m pip install --no-cache-dir --upgrade pip
+RUN python3 -m pip install --no-cache-dir --upgrade pip --no-warn-script-location
 
 ENV JUPYTER_PORT=8888
 EXPOSE ${JUPYTER_PORT}
