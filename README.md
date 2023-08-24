@@ -32,10 +32,21 @@ docker run --rm -p 8080:8080 -p 8888:8888 -it xplain-base
 docker run --rm -it --entrypoint /bin/bash xplain-base
 ```
 
-### tag and push image to registry
+### authenticate
+
+A [Personal Authentication Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+with the `read repository` permission needs to be generated.
+
 ```shell
-docker image tag xplain-base:latest registry-host:5000/hes-xplain/xplain-base:latest
-docker push registry-host:5000/hes-xplain/xplain-base:latest
+PAT=abcdef123456789
+echo $PAT | docker login -u <username> ghcr.io --password-stdin
 ```
 
-If `registry-host:5000/` is omitted, the registry used will be [Docker Hub](https://hub.docker.com/).
+### tag and push image to registry
+
+```shell
+docker image tag xplain-base:latest ghcr.io/hes-xplain/xplain-base:latest
+docker push ghcr.io/hes-xplain/xplain-base:latest
+```
+
+If `ghcr.io` is omitted, the registry used will be [Docker Hub](https://hub.docker.com/).
