@@ -6,7 +6,7 @@ Instructions for the release process and publication on ghcr.io.
 
 In *Releases*, select *Draft a new release* in the GitHub interface.
 
-* In *Choose a tag*, enter a new tag in the form `X.Y.Z`
+* In *Choose a tag*, enter a new tag in the form `vX`
 * Add notes to describe the changes
 * Select *Publish release*
 
