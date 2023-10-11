@@ -2,6 +2,15 @@
 
 Instructions for the release process and publication on ghcr.io.
 
+## Tag the commit
+
+Tag the commit and push the tag.
+
+```
+git tag vX -m "vX"
+git push origin main --tags
+```
+
 ## Create new release
 
 In *Releases*, select *Draft a new release* in the GitHub interface.
