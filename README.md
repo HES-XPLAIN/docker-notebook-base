@@ -5,19 +5,31 @@ The image is built upon the [bitnami pytorch](https://hub.docker.com/r/bitnami/p
 
 It includes Jupyter and all dependency packages necessary to run the provided notebooks.
 
-## Release
+## Build
 
-To publish the package on the GitHub Packages registry, see [RELEASE](RELEASE.md).
+### authenticate (build from hub.docker.com)
 
-## Cheatsheet
+Sign in to [Docker Hub](https://hub.docker.com/) and create an [access-token](docs.docker.com/go/access-tokens),
+then authenticate:
+
+```shell
+PAT=<token>
+echo $PAT | docker -u <usernam> --password-stdin <token>
+```
+
+This is necessary to pull the bitnami pytorch image that is hosted on the Docker Hub registry.
 
 ### build
 
+Build the image using the image:
+
 ```shell
-docker build -t xplain-base .
+docker buildx build -t xplain-base .
 ```
 
-### run
+## Run
+
+### simple run
 ```shell
 docker run --rm -it xplain-base
 ```
@@ -32,14 +44,18 @@ docker run --rm -p 8080:8080 -p 8888:8888 -it xplain-base
 docker run --rm -it --entrypoint /bin/bash xplain-base
 ```
 
-### authenticate
+## Release (manual)
+
+To publish the package on the GitHub Packages registry, see [RELEASE](RELEASE.md).
+
+### authenticate (push to ghcr.io)
 
 A [Personal Authentication Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 with the `read repository` permission needs to be generated.
 
 ```shell
-PAT=abcdef123456789
-echo $PAT | docker login -u <username> ghcr.io --password-stdin
+GHCRPAT=abcdef123456789
+echo $GHCRPAT | docker login -u <username> ghcr.io --password-stdin
 ```
 
 ### tag and push image to registry
@@ -50,3 +66,7 @@ docker push ghcr.io/hes-xplain/xplain-base:latest
 ```
 
 If `ghcr.io` is omitted, the registry used will be [Docker Hub](https://hub.docker.com/).
+
+## Release
+
+To publish the package on the GitHub Packages registry, see [RELEASE](RELEASE.md).
