@@ -41,9 +41,10 @@ ENV HOME /home/${USER}
 # Create user
 RUN groupadd --gid $USER_GID $USER && useradd --uid $USER_UID --gid $USER_GID -m $USER
 
-# Install generic GL provider and glib
+# Install generic GL provider and glib, curl
 RUN apt-get update -y
 RUN apt-get install -y libgl1 libglib2.0-0
+RUN apt-get install -y curl
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
