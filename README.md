@@ -14,7 +14,7 @@ then authenticate:
 
 ```shell
 PAT=<token>
-echo $PAT | docker -u <usernam> --password-stdin <token>
+echo $PAT | docker login -u <usernam> --password-stdin
 ```
 
 This is necessary to pull the bitnami pytorch image that is hosted on the Docker Hub registry.
