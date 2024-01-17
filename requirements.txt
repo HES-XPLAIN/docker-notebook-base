@@ -3,5 +3,5 @@ opencv-python==4.8.1.78
 pandas==2.0.3
 plotly==5.18.0
 scikit-learn==1.1.3
-jupyterlab==4.0.7
-rules-extraction==0.0.2
+jupyterlab==4.0.10
+rules-extraction==0.1.0
