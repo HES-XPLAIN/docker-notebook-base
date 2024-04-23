@@ -56,6 +56,9 @@ COPY --from=builder --chown="${USER_UID}:${USER_GID}" $HOME/.local ./.local/
 # Upgrade pip
 RUN python3 -m pip install --no-cache-dir --upgrade pip --no-warn-script-location
 
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+
 ENV JUPYTER_PORT=8888
 EXPOSE ${JUPYTER_PORT}
 
