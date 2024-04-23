@@ -44,6 +44,21 @@ docker run --rm -p 8080:8080 -p 8888:8888 -it xplain-base
 docker run --rm -it --entrypoint /bin/bash xplain-base
 ```
 
+## Run with CUDA support
+
+* Refer to [nVidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/) to set up the container runtime on the host machine.
+
+### run with cuda support and launch jupyter
+
+```shell
+sudo docker run --rm -p 8080:8080 -p 8888:8888 --runtime=nvidia --gpus all xplain-base
+```
+
+### run with cuda support and override entry point
+```shell
+sudo docker run --rm -p 8080:8080 -p 8888:8888 -it --runtime=nvidia --gpus all --entrypoint /bin/bash xplain-base
+```
+
 ## Release (manual)
 
 To publish the package on the GitHub Packages registry, see [RELEASE](RELEASE.md).
