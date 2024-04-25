@@ -13,6 +13,7 @@ RUN echo "deb http://deb.debian.org/debian testing main contrib non-free" >> /et
 RUN apt-get update -y
 RUN apt-get install -y build-essential
 RUN apt-get install -y -t testing gcc-11
+RUN apt-get install -y git
 
 # Make sure the contents of our repo is in $HOME
 COPY requirements.txt $HOME/
