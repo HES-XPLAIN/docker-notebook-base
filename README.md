@@ -51,12 +51,12 @@ docker run --rm -it --entrypoint /bin/bash xplain-base
 ### run with cuda support and launch jupyter
 
 ```shell
-sudo docker run --rm -p 8080:8080 -p 8888:8888 --runtime=nvidia --gpus all xplain-base
+docker run --rm -p 8080:8080 -p 8888:8888 --runtime=nvidia --gpus all xplain-base
 ```
 
 ### run with cuda support and override entry point
 ```shell
-sudo docker run --rm -p 8080:8080 -p 8888:8888 -it --runtime=nvidia --gpus all --entrypoint /bin/bash xplain-base
+docker run --rm -p 8080:8080 -p 8888:8888 -it --runtime=nvidia --gpus all --entrypoint /bin/bash xplain-base
 ```
 
 ## Release (manual)
