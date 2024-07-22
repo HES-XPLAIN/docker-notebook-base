@@ -1,8 +1,8 @@
 omnixai @ git+https://github.com/salesforce/OmniXAI.git@v1.3.2
-opencv-python==4.9.0.80
+opencv-python==4.10.0.84
 pandas==2.0.3
 plotly==5.22.0
 scikit-learn==1.5.0
 dimlpfidex==0.0.3
 rules-extraction==0.1.1
-huggingface-hub[cli]==0.23.0
+huggingface-hub[cli]==0.24.0
