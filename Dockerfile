@@ -7,8 +7,8 @@ ARG USER=jovyan
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-ENV USER ${USER}
-ENV HOME /home/${USER}
+ENV USER=${USER}
+ENV HOME=/home/${USER}
 
 # Install utilities
 RUN apt update -y
@@ -32,8 +32,8 @@ RUN python3 -m pip install --no-cache-dir --user -r requirements.txt
 # Fix permissions
 RUN chown -R ${USER}:users ~/.local
 
-ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
 ENV JUPYTER_PORT=8888
 EXPOSE ${JUPYTER_PORT}
