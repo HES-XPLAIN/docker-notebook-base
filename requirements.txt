@@ -1,8 +1,8 @@
-mlxplain==1.0.2
+mlxplain==1.0.3
 opencv-python==4.10.0.84
 pandas==2.0.3
-plotly==5.23.0
+plotly==5.24.0
 scikit-learn==1.1.3
-dimlpfidex==0.0.6
+dimlpfidex==1.0.0
 rules-extraction==0.1.4
 huggingface-hub[cli]==0.24.6
