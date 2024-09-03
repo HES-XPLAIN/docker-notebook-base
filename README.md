@@ -1,25 +1,12 @@
 # notebook-docker-base
 Docker base image for HES-XPLAIN notebooks.
 
-The image is built upon the [bitnami pytorch](https://hub.docker.com/r/bitnami/pytorch/) by VMware.
+The image is built upon the [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/) Pytorch image.
 
 It includes Jupyter and all dependency packages necessary to run the provided notebooks.
+It allows PyTorch operations to use compatible NVIDIA GPUs for accelerated computations.
 
 ## Build
-
-### authenticate (build from hub.docker.com)
-
-Sign in to [Docker Hub](https://hub.docker.com/) and create an [access-token](docs.docker.com/go/access-tokens),
-then authenticate:
-
-```shell
-PAT=<token>
-echo $PAT | docker login -u <usernam> --password-stdin
-```
-
-This is necessary to pull the bitnami pytorch image that is hosted on the Docker Hub registry.
-
-### build
 
 Build the image using the image:
 
